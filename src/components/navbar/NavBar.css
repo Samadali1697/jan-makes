@@ -1,0 +1,49 @@
+.root {
+  width: 100%;
+  height: 100%;
+  background-color: #efefec;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.logo {
+  width: 100%;
+  margin-left: 15px;
+}
+.logo img {
+  width: 8%;
+  text-align: center;
+  float: left;
+  transform: rotate(-360deg);
+  transition: all 0.5s ease-in-out 0s;
+}
+.logo img:hover {
+  filter: drop-shadow(0 0 .5em #ff0000);
+  transform: rotate(360deg);
+  transition: all 0.5s ease-in-out 0s;
+  border-radius: 40px;
+}
+
+.navigations {
+  padding: 10px;
+  width: 40%;
+  text-align: right;
+  float: right;
+  display: block;
+  margin-right: 10px;
+  /* background-color: #ff0000 */
+}
+
+.navigations a {
+  float: right;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'Dancing Script', cursive;
+}
+.navigations a:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
