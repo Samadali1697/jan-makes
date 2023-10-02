@@ -1,14 +1,4 @@
-.root {
-  width: 100%;
-  background-color: white;
-}
-
-.navBar {
-  width: 100%;
-  height: 8em;
-}
-
-.homeBar {
+.appRoot {
   width: 100%;
   height: 100%;
 }

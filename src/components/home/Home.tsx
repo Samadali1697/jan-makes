@@ -1,28 +1,11 @@
+import FeatureShow from '../feature-show/FeatureShow';
 import './Home.css';
 
 function Home() {
 
   return (
-    <div className="root1">
-      <p>hello</p>
-      <p>hello</p>
-
-      <p>hello</p>
-
-      <p>hello</p>
-
-      <p>hello</p>
-
-      <p>hello</p>
-
-      <p>hello</p>
-      <p>hello</p>
-      <p>hello</p>
-      <p>hello</p>
-     <p>hello</p>
-<p>hello</p>
-<p>hello</p>
-
+    <div className="homeBar">
+      <FeatureShow />
     </div>
   )
 }

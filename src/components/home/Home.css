@@ -1,7 +1,4 @@
-
-.root1 {
+.homeBar {
   width: 100%;
-  background-color: #919191;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  height: 100%;
 }

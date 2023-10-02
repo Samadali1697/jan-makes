@@ -5,22 +5,18 @@ import Home from './components/home/Home'
 
 function App() {
   return (
-    <div className="root">
+    <div className="appRoot">
       <Router>
-          <div className="navBar">
-              <NavBar />
-          </div>
-          <div className="homeBar">
-              {/* <Routes>
-                  <Route exact path="/" element={
-                      <Home about={portfolioData.about} interest={portfolioData.interest} journey={portfolioData.journey}/>
-                  }/>
-                  <Route path="*" element={<NotFound />}/>
-              </Routes> */}
-              <Home />
-          </div>
+          <NavBar />
+          
+          {/* <Routes>
+              <Route exact path="/" element={
+                  <Home about={portfolioData.about} interest={portfolioData.interest} journey={portfolioData.journey}/>
+              }/>
+              <Route path="*" element={<NotFound />}/>
+          </Routes> */}
+          <Home />
       </Router>
-
     </div>
   )
 }
