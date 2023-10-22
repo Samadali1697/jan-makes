@@ -5,7 +5,10 @@ function Home() {
 
   return (
     <div className="homeBar">
-      <FeatureShow />
+      <FeatureShow imagePriority={false}/>
+      <p>helloooooo</p>
+      <FeatureShow imagePriority={true}/>
+
     </div>
   )
 }

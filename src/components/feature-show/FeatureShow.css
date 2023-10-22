@@ -3,8 +3,9 @@
   height: 90%;
   display: flex;
   border-bottom:1px solid  #d8d8d7;
+  background-color: #f3f3f2;
 }
-.col1 {
+.textColumn {
   background-color: #f3f3f2;
   width: 50%;
   transform: translate(50%, 50%);
@@ -12,7 +13,6 @@
 }
 .flex-child {
   height: 100%;
-  overflow: scroll;
   flex: 1;
   object-fit: cover;
   text-align: center;
