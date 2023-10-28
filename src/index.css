@@ -3,6 +3,7 @@
 a {
   color: #625e5e99;
   text-decoration: underline;
+  line-height: 1.65;
 }
 a:hover {
   color: #6a6a6a;

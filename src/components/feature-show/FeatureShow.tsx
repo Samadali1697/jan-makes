@@ -1,30 +1,56 @@
 import './FeatureShow.css';
-import testImage from '../../assets/IMG_2565_1200x.jpg';
+import { useState, useEffect } from 'react';
 
 function FeatureShow(props: any) {
-  const imagePriority = props.imagePriority;
+  const [imagePriority] = useState(props.imagePriority);
+
+  useEffect(() => {
+    // Function to handle scroll events
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.flex-child img');
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          element.classList.add('fade-in');
+        }
+      });
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Run the logic once when the component initially mounts
+    handleScroll();
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const rootClass = `featureShowRoot${imagePriority ? ' image-priority' : ''}`;
 
   return (
-    <div className={rootClass}>
+    <div id={`featureShow-${props.id}`} className={rootClass}>
       <div className="textColumn">
-      <div className="textContainer">
-          <p className="text">NEWS</p>
-          <p className="heading">DARLING WRAP</p>
-          <p className="description">Darling Wrap is a simple and elegant ribbed wrap cardigan with waist ties designed to be worn over dresses or high-waisted jeans – a perfect wardrobe staple.</p>
+        <div className="textContainer">
+          <p className="text">{props.data.text}</p>
+          <p className="heading">{props.data.heading}</p>
+          <p className="description">{props.data.description}</p>
           <p className="text">Find the pattern in:</p>
-          <a href="#home">Home</a>
-          <br></br>
-          <a href="#pattern">Patterns</a>
-          <br></br>
-          <a href="#portfolio">Portfolio</a>
+          {props.data.links.map((link, index) => (
+            <a key={index} href={link.href}>
+              {link.label}
+            </a>
+          ))}
         </div>
       </div>
       <div className="flex-child">
-        <img src={testImage} alt={"This is a test image"} />
+        <img src={props.image} alt="This is a feature image" />
       </div>
     </div>
-  )
+  );
 }
 
-export default FeatureShow
+export default FeatureShow;
+

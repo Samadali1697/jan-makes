@@ -43,6 +43,13 @@
 .flex-child img {
   max-width: 100%; /* Ensure the image doesn't exceed the column width */
   height: auto;
+  opacity: 0; /* Initially, set the opacity to 0 */
+  transition: opacity 1s ease-in-out;
+}
+
+/* CSS for the fade-in effect when the element is visible */
+.flex-child img.fade-in {
+  opacity: 1;
 }
 
 /* If imagePriority is true, switch the order of flex items */
@@ -95,7 +102,6 @@
   font-style: normal;
   color: #1c1b1b;
   background: #f3f3f2;
-  line-height: 1.65;
 }
 
 /* Responsive Styles */
