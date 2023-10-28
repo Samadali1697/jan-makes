@@ -1,3 +1,4 @@
+/* Common styles for .featureShowRoot */
 .featureShowRoot {
   width: 100%;
   height: 90%;
@@ -6,6 +7,7 @@
   background-color: #f3f3f2;
 }
 
+/* Styles for .textColumn */
 .textColumn {
   background-color: #f3f3f2;
   flex: 1; /* Equal width for both columns */
@@ -15,6 +17,8 @@
   align-items: center; /* Horizontally center children */
   box-sizing: border-box; /* Include padding in the element's width and height */
 }
+
+/* Styles for .textContainer (used for centering) */
 .textContainer {
   display: flex;
   flex-direction: column;
@@ -23,6 +27,7 @@
   width: 50%; /* Take up half the width of .textColumn */
 }
 
+/* Styles for .flex-child (image container) */
 .flex-child {
   height: 100%;
   flex: 1; /* Equal width for both columns */
@@ -34,6 +39,7 @@
   justify-content: center;
 }
 
+/* Styles for .flex-child img (image) */
 .flex-child img {
   max-width: 100%; /* Ensure the image doesn't exceed the column width */
   height: auto;
@@ -50,15 +56,14 @@
   }
 }
 
-
-/* All the internal children of textColumn */
+/* Styles for internal children of .textColumn */
 .heading {
   font-size: 24px;
   font-family: 'Dancing Script', cursive;
   font-weight: 400;
   font-style: normal;
   color: #1c1b1b;
-  letter-spacing: .2em; 
+  letter-spacing: .2em;
   text-transform: uppercase;
 }
 
@@ -68,7 +73,7 @@
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  font-family: Raleway,sans-serif;
+  font-family: Raleway, sans-serif;
   font-weight: 400;
   font-weight: bolder;
   font-style: normal;
@@ -84,7 +89,7 @@
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  font-family: Raleway,sans-serif;
+  font-family: Raleway, sans-serif;
   font-weight: 400;
   font-weight: bolder;
   font-style: normal;
@@ -93,3 +98,17 @@
   line-height: 1.65;
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .featureShowRoot {
+    flex-direction: column;
+  }
+
+  .textColumn, .flex-child {
+    width: 100%;
+  }
+
+  .textColumn, .flex-child img {
+    max-width: 100%;
+  }
+}
