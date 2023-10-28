@@ -1,0 +1,120 @@
+/* Common styles for .featureShowRoot */
+.featureShowRoot {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  border-bottom: 1px solid #d8d8d7;
+  background-color: #f3f3f2;
+}
+
+/* Styles for .textColumn */
+.textColumn {
+  background-color: #f3f3f2;
+  flex: 1; /* Equal width for both columns */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center children */
+  align-items: center; /* Horizontally center children */
+  box-sizing: border-box; /* Include padding in the element's width and height */
+}
+
+/* Styles for .textContainer (used for centering) */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  width: 50%; /* Take up half the width of .textColumn */
+}
+
+/* Styles for .flex-child (image container) */
+.flex-child {
+  height: 100%;
+  flex: 1; /* Equal width for both columns */
+  object-fit: cover;
+  text-align: center;
+  background-color: #f3f3f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Styles for .flex-child img (image) */
+.flex-child img {
+  max-width: 100%; /* Ensure the image doesn't exceed the column width */
+  height: auto;
+  opacity: 0; /* Initially, set the opacity to 0 */
+  transition: opacity 1s ease-in-out;
+}
+
+/* CSS for the fade-in effect when the element is visible */
+.flex-child img.fade-in {
+  opacity: 1;
+}
+
+/* If imagePriority is true, switch the order of flex items */
+.featureShowRoot.image-priority {
+  .textColumn {
+    order: 2;
+  }
+
+  .flex-child {
+    order: 1;
+  }
+}
+
+/* Styles for internal children of .textColumn */
+.heading {
+  font-size: 24px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #1c1b1b;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.description {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+  font-weight: bolder;
+  font-style: normal;
+  color: #1c1b1b;
+  background: #f3f3f2;
+  line-height: 1.65;
+  text-align: left;
+}
+
+.text {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+  font-weight: bolder;
+  font-style: normal;
+  color: #1c1b1b;
+  background: #f3f3f2;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .featureShowRoot {
+    flex-direction: column;
+  }
+
+  .textColumn, .flex-child {
+    width: 100%;
+  }
+
+  .textColumn, .flex-child img {
+    max-width: 100%;
+  }
+}
