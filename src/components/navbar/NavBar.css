@@ -1,15 +1,19 @@
+/* Common styles for the navbar */
 .navbar {
   width: 100%;
-  height: 140px;
   background-color: #ffffff;
   position: sticky;
   top: 0;
-  border-bottom:1px solid  #d8d8d7;
+  border-bottom: 1px solid #d8d8d7;
   z-index: 100;
+  height: 140px;
 }
+
+/* Logo styles */
 .logo {
-  width: 100%;
+  text-align: center;
 }
+
 .logo img {
   width: 8%;
   text-align: center;
@@ -17,32 +21,58 @@
   transform: rotate(-360deg);
   transition: all 0.5s ease-in-out 0s;
 }
+
 .logo img:hover {
-  filter: drop-shadow(0 0 .5em #ff0000);
+  filter: drop-shadow(0 0 0.5em #ff0000);
   transform: rotate(360deg);
-  transition: all 0.5s ease-in-out 0s;
   border-radius: 40px;
 }
 
+/* Navigation styles */
 .navigations {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   padding: 10px;
-  width: 40%;
-  text-align: right;
-  float: right;
-  display: block;
-  margin-right: 10px;
 }
 
 .navigations a {
-  float: right;
-  display: block;
   color: #000000;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
   font-size: 24px;
   font-family: 'Dancing Script', cursive;
+  margin: 0 10px;
 }
+
 .navigations a:hover {
   background-color: #d8d8d7;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  /* Adjust styles for tablets and smaller screens */
+  .navbar {
+    height: auto;
+  }
+
+  .navigations {
+    display: block;
+    float: none; /* No float on smaller screens */
+  }
+
+  .navigations a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .navigations.active {
+    display: flex;
+  }
+
+  /* Adjust the logo for tablets and smaller screens */
+  .logo img {
+    width: 25%; /* Takes up the full width */
+    float: none; /* No float on smaller screens */
+  }
 }

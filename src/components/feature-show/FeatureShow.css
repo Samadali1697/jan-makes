@@ -2,32 +2,56 @@
   width: 100%;
   height: 90%;
   display: flex;
-  border-bottom:1px solid  #d8d8d7;
+  border-bottom: 1px solid #d8d8d7;
   background-color: #f3f3f2;
 }
+
 .textColumn {
   background-color: #f3f3f2;
-  width: 50%;
-  transform: translate(50%, 50%);
-  line-height: 1.65;
+  flex: 1; /* Equal width for both columns */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center children */
+  align-items: center; /* Horizontally center children */
+  box-sizing: border-box; /* Include padding in the element's width and height */
 }
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  width: 50%; /* Take up half the width of .textColumn */
+}
+
 .flex-child {
   height: 100%;
-  flex: 1;
+  flex: 1; /* Equal width for both columns */
   object-fit: cover;
   text-align: center;
   background-color: #f3f3f2;
-}  
-.flex-child img {
-  height: 100%;
-  width: 100%;
-  animation: fadeIn 5s;
-} 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.flex-child img {
+  max-width: 100%; /* Ensure the image doesn't exceed the column width */
+  height: auto;
+}
+
+/* If imagePriority is true, switch the order of flex items */
+.featureShowRoot.image-priority {
+  .textColumn {
+    order: 2;
+  }
+
+  .flex-child {
+    order: 1;
+  }
+}
+
+
+/* All the internal children of textColumn */
 .heading {
   font-size: 24px;
   font-family: 'Dancing Script', cursive;
@@ -68,3 +92,4 @@
   background: #f3f3f2;
   line-height: 1.65;
 }
+

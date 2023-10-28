@@ -7,7 +7,7 @@ function NavBar() {
     <div className="navbar">
       <div className="logo">
         <a href="#home">
-          <img src={logo} alt={"Jan Makes"} />
+          <img src={logo} alt="Jan Makes" />
         </a>
       </div>
       <div className="navigations">
