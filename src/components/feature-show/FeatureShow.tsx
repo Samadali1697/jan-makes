@@ -1,5 +1,6 @@
 import './FeatureShow.css';
 import { useState, useEffect } from 'react';
+import { Link } from '../../types/Link'; 
 
 function FeatureShow(props: any) {
   const [imagePriority] = useState(props.imagePriority);
@@ -38,7 +39,7 @@ function FeatureShow(props: any) {
           <p className="heading">{props.data.heading}</p>
           <p className="description">{props.data.description}</p>
           <p className="text">Find the pattern in:</p>
-          {props.data.links.map((link, index) => (
+          {props.data.links.map((link: Link, index: number) => (
             <a key={index} href={link.href}>
               {link.label}
             </a>
