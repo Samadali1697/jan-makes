@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NavBar from './components/navbar/NavBar'
 import Home from './components/home/Home'
+import FootBar from './components/footer/FootBar'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               <Route path="*" element={<NotFound />}/>
           </Routes> */}
           <Home />
+          <FootBar />
       </Router>
     </div>
   )
