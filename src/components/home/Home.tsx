@@ -4,6 +4,7 @@ import featureImage2 from '../../assets/IMG_2565_1200x.jpg';
 import './Home.css';
 import { useState } from 'react';
 import { Link } from '../../types/Link'; 
+import Products from '../products/Products';
 
 function Home() {
   const [data1] = useState({
@@ -27,15 +28,17 @@ function Home() {
       { label: 'German', href: '#german' },
     ] as Link[],
   });
+  const [productData] = useState({
+    heading: 'Products',
+  });
 
   return (
     <div className="homeBar">
       <FeatureShow imagePriority={false} image={featureImage1} id={1} data={data1}/>
-      <p>helloooooo</p>
+      
+      <Products image={featureImage1} data={productData}/>
+
       <FeatureShow imagePriority={true} image={featureImage2} id={2} data={data2}/>
-      <p>helloooooo</p>
-
-
     </div>
   )
 }

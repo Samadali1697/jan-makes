@@ -1,0 +1,90 @@
+.productsRoot {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #d8d8d7;
+  background-color: #f3f3f2;
+  text-align: center;
+}
+
+.productsContainer {
+  width: 100%;
+  height: 80%;
+  position: relative;
+  background-color: #f3f2f2;
+}
+
+.productsList {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  overflow-x: auto; /* Use 'auto' to enable horizontal scrolling when necessary */
+  white-space: nowrap; /* Ensure that child elements don't wrap to the next line */
+  min-width: 500px; /* Set a minimum width for the ProductsList */
+}
+
+.product-child {
+  min-width: 500px; /* Set a minimum width for each .product-child */
+  height: auto;
+  object-fit: cover;
+  text-align: center;
+  background-color: #f3f3f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2%;
+}
+
+/* Styles for .product-child img (image) */
+.product-child img {
+  max-width: 100%; /* Ensure the image doesn't exceed the column width */
+  height: auto;
+  opacity: 0; /* Initially, set the opacity to 0 */
+  transition: opacity 1s ease-in-out;
+}
+
+/* CSS for the fade-in effect when the element is visible */
+.product-child img.fade-in {
+  opacity: 1;
+}
+
+/* Style for the scroll buttons */
+.scroll-button {
+  position: absolute;
+  top: 50%; /* Position the button at the vertical center */
+  transform: translateY(-50%); /* Adjust the button's vertical alignment */
+  width: 5%; /* Adjust the button width as needed */
+  height: 15%; /* Make the button round by setting the same height and width */
+  border-radius: 50%; 
+  background-color: #f3f3f2;
+  border: none;
+  cursor: pointer;
+}
+
+.scroll-button.left {
+  left: 1%;
+}
+
+.scroll-button.right {
+  right: 1%;
+}
+
+.productTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  width: 100%; /* Take up half the width of .textColumn */
+  background-color: #f3f3f2;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .scroll-button {
+    width: 15%; 
+    height: 15%;
+  }
+
+  .product-child {
+    min-width: 480px;
+  }
+}
