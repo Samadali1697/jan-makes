@@ -28,12 +28,15 @@ function Home() {
       { label: 'German', href: '#german' },
     ] as Link[],
   });
+  const [productData] = useState({
+    heading: 'Products',
+  });
 
   return (
     <div className="homeBar">
       <FeatureShow imagePriority={false} image={featureImage1} id={1} data={data1}/>
       
-      <Products image={featureImage1}/>
+      <Products image={featureImage1} data={productData}/>
 
       <FeatureShow imagePriority={true} image={featureImage2} id={2} data={data2}/>
     </div>

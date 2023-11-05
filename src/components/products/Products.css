@@ -1,26 +1,29 @@
-.ProductsRoot {
+.productsRoot {
   width: 100%;
   height: 100%;
   border-bottom: 1px solid #d8d8d7;
   background-color: #f3f3f2;
+  text-align: center;
 }
 
-.ProductsContainer {
+.productsContainer {
   width: 100%;
-  height: 90%;
-  display: flex;
-  overflow-x: scroll; /* Enable horizontal scrolling */
-  white-space: nowrap; /* Ensure that child elements don't wrap to the next line */
+  height: 80%;
   position: relative;
+  background-color: #f3f2f2;
 }
 
-.ProductsList {
+.productsList {
+  width: 100%;
+  height: 80%;
   display: flex;
-  
+  overflow-x: auto; /* Use 'auto' to enable horizontal scrolling when necessary */
+  white-space: nowrap; /* Ensure that child elements don't wrap to the next line */
+  min-width: 500px; /* Set a minimum width for the ProductsList */
 }
 
 .product-child {
-  width: 500px; /* Each .product-child takes 20% of the parent width */
+  min-width: 500px; /* Set a minimum width for each .product-child */
   height: auto;
   object-fit: cover;
   text-align: center;
@@ -28,7 +31,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 2%;
 }
+
 /* Styles for .product-child img (image) */
 .product-child img {
   max-width: 100%; /* Ensure the image doesn't exceed the column width */
@@ -42,76 +47,44 @@
   opacity: 1;
 }
 
+/* Style for the scroll buttons */
 .scroll-button {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 30px; /* Adjust the button width as needed */
+  top: 50%; /* Position the button at the vertical center */
+  transform: translateY(-50%); /* Adjust the button's vertical alignment */
+  width: 5%; /* Adjust the button width as needed */
+  height: 15%; /* Make the button round by setting the same height and width */
+  border-radius: 50%; 
   background-color: #f3f3f2;
   border: none;
   cursor: pointer;
 }
 
 .scroll-button.left {
-  left: 0;
+  left: 1%;
 }
 
 .scroll-button.right {
-  right: 0;
+  right: 1%;
 }
 
-/* Styles for internal children of .textColumn */
-/* .heading {
-  font-size: 24px;
-  font-family: 'Dancing Script', cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: #1c1b1b;
-  letter-spacing: .2em;
-  text-transform: uppercase;
+.productTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  width: 100%; /* Take up half the width of .textColumn */
+  background-color: #f3f3f2;
 }
-
-.description {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-family: Raleway, sans-serif;
-  font-weight: 400;
-  font-weight: bolder;
-  font-style: normal;
-  color: #1c1b1b;
-  background: #f3f3f2;
-  line-height: 1.65;
-  text-align: left;
-}
-
-.text {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-family: Raleway, sans-serif;
-  font-weight: 400;
-  font-weight: bolder;
-  font-style: normal;
-  color: #1c1b1b;
-  background: #f3f3f2;
-} */
 
 /* Responsive Styles */
-/* @media screen and (max-width: 1024px) {
-  .featureShowRoot {
-    flex-direction: column;
+@media screen and (max-width: 1024px) {
+  .scroll-button {
+    width: 15%; 
+    height: 15%;
   }
 
-  .textColumn, .product-child {
-    width: 100%;
+  .product-child {
+    min-width: 480px;
   }
-
-  .textColumn, .product-child img {
-    max-width: 100%;
-  }
-} */
+}

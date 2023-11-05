@@ -1,12 +1,12 @@
 import './Products.css';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 function Products(props: any) {
 
-  const scrollAmount = 500; // Adjust the scroll amount as needed
+  const scrollAmount = 350; // Adjust the scroll amount as needed
 
   useEffect(() => {
-    const productsList = document.querySelector('.ProductsContainer');
+    const productsList = document.querySelector('.productsList');
     const scrollLeftButton = document.querySelector('.scroll-button.left');
     const scrollRightButton = document.querySelector('.scroll-button.right');
 
@@ -49,9 +49,12 @@ function Products(props: any) {
 
 
   return (
-    <div className="ProductsRoot">
-      <div className="ProductsContainer">
-        <div className="ProductsList">
+    <div className="productsRoot">
+      <div className="productTextContainer">
+          <p className="heading">{props.data.heading}</p>
+        </div>
+      <div className="productsContainer">
+        <div className="productsList">
         {Array.from({ length: 8 }).map((_, i) => (
           <div key={i} className="product-child">
             <img src={props.image} alt="This is a feature image" />
