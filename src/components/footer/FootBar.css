@@ -1,0 +1,88 @@
+/* Common styles for the navbar */
+.footbar {
+  width: 100%;
+  background-color: #ffffff;
+  bottom: 0;
+  z-index: 100;
+  height: 500px;
+  display: flex;
+}
+
+.footbar-flex-child {
+  height: 100%;
+  flex: 1; /* Equal width for all columns */
+  object-fit: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footbar-flex-child-big {
+  flex: 2;
+}
+
+.footbar-flex-child img {
+  width: 50%;
+  text-align: center;
+  float: left;
+  transform: rotate(-360deg);
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.footbar-flex-child img:hover {
+  filter: drop-shadow(0 0 0.5em #ff0000);
+  transform: rotate(360deg);
+  border-radius: 40px;
+}
+
+.footbar-flex-child-row {
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1%;
+}
+.footbar-flex-child-row a {
+  display: block;
+}
+
+.first-p {
+  text-align: left;
+  margin: 1%;
+}
+
+.first-p p {
+  background-color: #ffffff;
+}
+
+.social {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.social img {
+  width: 10%;
+  margin: 1%;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  /* Adjust styles for tablets and smaller screens */
+  .footbar {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footbar-flex-child {
+    width: 100%;
+  }
+
+  .social img {
+    width: 6%;
+    margin: 1%;
+  }
+}
