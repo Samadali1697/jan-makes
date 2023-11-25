@@ -2,6 +2,8 @@ import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NavBar from './components/navbar/NavBar'
 import Home from './components/home/Home'
+import NotFound from './components/not-found/NotFound'
+import FootBar from './components/footer/FootBar'
 
 function App() {
   return (
@@ -9,13 +11,17 @@ function App() {
       <Router>
           <NavBar />
           
-          {/* <Routes>
-              <Route exact path="/" element={
-                  <Home about={portfolioData.about} interest={portfolioData.interest} journey={portfolioData.journey}/>
+          <Routes>
+              <Route path="/" element={
+                  <Home />
+              }/>
+              <Route path="/home" element={
+                  <Home />
               }/>
               <Route path="*" element={<NotFound />}/>
-          </Routes> */}
-          <Home />
+          </Routes>
+          
+          <FootBar />
       </Router>
     </div>
   )

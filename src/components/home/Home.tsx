@@ -35,10 +35,9 @@ function Home() {
   return (
     <div className="homeBar">
       <FeatureShow imagePriority={false} image={featureImage1} id={1} data={data1}/>
-      
-      <Products image={featureImage1} data={productData}/>
-
+      <Products image={featureImage2} data={productData}/>
       <FeatureShow imagePriority={true} image={featureImage2} id={2} data={data2}/>
+      <Products image={featureImage1} data={productData}/>
     </div>
   )
 }

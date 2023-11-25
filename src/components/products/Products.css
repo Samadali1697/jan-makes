@@ -55,7 +55,7 @@
   width: 5%; /* Adjust the button width as needed */
   height: 15%; /* Make the button round by setting the same height and width */
   border-radius: 50%; 
-  background-color: #f3f3f2;
+  background-color: #ffffff;
   border: none;
   cursor: pointer;
 }
